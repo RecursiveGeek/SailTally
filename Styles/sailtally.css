@@ -1,0 +1,176 @@
+﻿/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~,_/|)~~~
+ SailTally Sailboat Racing Scoring
+ Software Development: Hans Dickel, Aeriden LLC (www.aeriden.com)
+
+ See LICENSE.TXT for licensing information
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~,_/|)~~~*/
+
+/* Supporting Bootstrap
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    margin-bottom: 60px; /* Sticky footer */
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="select"] {
+    max-width: 280px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+    .body-content {
+        padding: 0;
+    }
+}
+
+@media print {
+    /* Override Bootstrap: Don't include the link in the print output */
+    a:after { content: '' !important; }
+    a[href]:after { content: none !important; }
+}
+
+/* Sticky Footer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #2780E3; /* #6CA9EC; */
+    color: silver;
+    padding-top: 10px;
+}
+
+/* Login 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+legend  { padding: 2px 4px 8px 4px; border-bottom-color: #2780E3; }
+fieldset.login label, fieldset.register label, fieldset.changePassword label { display: block; font-weight: normal; }
+fieldset label.inline { display: inline; }
+div.accountInfo { width: 300px; text-align: left; background-color: #eaf4fe; padding: 5px; border-color: #2780E3; border-width: 1px; border-style: solid; }
+
+/* HTML Controls (non-tables)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+select { height: 30px; }
+label { font-weight: normal; }
+input[type="submit"],
+input[type="button"] {
+    height: 30px;
+    background-color: #2780E3;
+    color: white;
+    border-color: black;
+    border-width: 1px;
+}
+
+/* Tables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/*th, td { padding: 1px 3px; }*/
+table[id^="MainContent"][id*="_grid"] tbody tr th, table[id^="MainContent"][id*="_grid"] tbody tr td { border: 1px solid #ddd; }
+table[id^="MainContent"][id*="_grid"] tbody tr td span input[type="checkbox"] { display: block; margin-left: auto; margin-right: auto; } /* center checkboxes in GridView */
+table[id^="MainContent"][id*="_details"] tbody tr th, table[id^="MainContent"][id*="_details"] tbody tr td { border: 1px solid #ddd; }
+/* ReSharper disable once CssBrowserCompatibility */
+table[id^="MainContent"][id*="_details"] tbody tr td:nth-child(1) { font-weight: bold; } /* make first column bold in FormView */
+table { table-layout: auto; word-wrap: break-word; width: auto !important; }
+
+/*.TableGeneral, .TableGeneral tbody tr th, .TableGeneral tbody tr td { border-width: 1px; border-style: solid; }*/ /* Replaced with Responsive UI */
+.TableGeneral, .GridTable, .DetailsTable, .ResultsTable { border: 1px solid #ddd; }
+th, td { border-left: 1px solid #ddd; border-right: 1px solid #ddd; }
+.ColumnNumeric { text-align: right; }
+
+/* Results
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.old-ResultsTitlePlace   { vertical-align: bottom; text-align: left; }
+.old-ResultsTitleSail    { vertical-align: bottom; text-align: left; }
+.old-ResultsTitleSkipper { vertical-align: bottom; text-align: left; }
+.old-ResultsTitleRace    { vertical-align: bottom; text-align: left; } /* Race # */
+.old-ResultsTitleScore   { vertical-align: bottom; text-align: right; } /* Total Points */
+.old-ResultsPublished    { color: #c0c0c0; font-size: 10pt; }
+.old-ResultsBodyPlace    { vertical-align: top; }
+.old-ResultsBodySail     { vertical-align: top; }
+.old-ResultsBodySkipper  { vertical-align: top; }
+.old-ResultsBodyRace     { vertical-align: top; } /* Race # Points */
+.old-ResultsBodyScore    { vertical-align: top; text-align: right; } /* Total Points */
+
+.ResultsUnregistered     { color: #cc0000; font-size: 14pt; font-weight: bold; }
+.ResultsPublished        { color: #c0c0c0; font-size: 10pt; }
+.ResultsTitlePlace,
+.ResultsTitleSail,
+.ResultsTitleSkipper,
+.ResultsTitleRace,       /* Race # */
+.ResultsTitleScore,      /* Total Points*/
+.ResultsBodyPlace,
+.ResultsBodySail,
+.ResultsBodySkipper,
+.ResultsBodyRace,        /* Race # Points */
+.ResultsBodyScore        {  } /* Total Points */ /* Was the current value of th, td */
+
+/* Display Race
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.RaceHeader { Text-Align: right; Vertical-Align: top; padding-right: 5px; }
+.RaceDetail { Text-Align: left; Vertical-Align: top; }
+
+/* Season
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*select[id*="listSeason"] { width: 80px; }*/
+
+/* Schedule Races
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.ScheduleWhen { vertical-align: top; }
+.ScheduleInfo { vertical-align: top; } /* width: 80%; */
+.ScheduleInput { vertical-align: top; text-align: left; }
+.ScheduleButtons { vertical-align: middle; text-align: center; width: 125px; }
+.ScheduleOutput { vertical-align: top; }
+.ScheduleButton { width: 88px; }
+.ScheduleSeparator { height: 1px; }
+.ScheduleRaceId { font-size: 8pt; }
+select[id*="listSelectedFleetSeries"] { height: 300px; width: 436px; }
+input[id*="textPointsFactor"], input[id*="textRaceNo"] { width: 43px; }
+span[id*="labelSchedule"] { font-weight: bold; }
+#tableScheduleNavTop { width:100%; }
+/* ReSharper disable once CssBrowserCompatibility */
+#tableScheduleNavTop tbody tr td:nth-child(2) { text-align: right; }
+/* ReSharper disable once CssBrowserCompatibility */
+#MainContent_tableSchedule tbody tr td:nth-child(1) { font-weight: bold; vertical-align: top; }
+
+
+/* Working Dialog
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#dialog-working { display: block; margin-left: auto; margin-right: auto; }
+
+/* General
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.ErrorMessage { color: #cc0000; }
+span.Sail { font-weight: normal; font-size: 16pt; letter-spacing: 2px; }
+span.Tally { font-weight: bold; font-size: 16pt; letter-spacing: 2px; }
+
+/* ~end ~ */

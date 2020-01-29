@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18.5, 16.75" name="SailTally">
+  <DataContextMoniker Name="/SailTallyDataContext" />
+  <nestedChildShapes>
+    <classShape Id="359f653a-4d91-4f22-bf5e-851393882b37" absoluteBounds="14.75, 2.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_ThrowoutDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="65439d80-a616-4bef-8da8-2646d4529ebb" absoluteBounds="14.765, 2.8350000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bf4aebf2-955f-4441-9675-f646236f1595" absoluteBounds="11.375, 9.5, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_BoatOwner" />
+      <nestedChildShapes>
+        <elementListCompartment Id="23e4944d-bf1f-46d7-b898-effcb38757a8" absoluteBounds="11.39, 9.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1da624f-8d3d-47b7-b7fb-1beda80a165f" absoluteBounds="7.75, 1.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_Prize" />
+      <nestedChildShapes>
+        <elementListCompartment Id="57647897-f2f8-4a19-b507-e768859c972b" absoluteBounds="7.765, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="95bb704f-1a68-439d-a9ed-c789d95c7023" absoluteBounds="5.25, 1.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_PrizeDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1326ce82-906a-4550-8497-28cf02fcb38b" absoluteBounds="5.2650000000000006, 1.5850000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6675b549-f857-4cb1-9389-7ead08afdcde" absoluteBounds="14, 6.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_Registration" />
+      <nestedChildShapes>
+        <elementListCompartment Id="496516c0-f35b-4183-aaba-41f4cf87adf4" absoluteBounds="14.015, 6.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3732cd99-b281-42fd-8b2b-807c8e5c1c37" absoluteBounds="14.75, 0.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_ScoreMethodDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5f4a5713-caa6-446e-96ca-14be045526bd" absoluteBounds="14.765, 1.0850000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5a086af0-d110-4097-9fbd-1cae7911b9d3" absoluteBounds="12.75, 4.125, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_Sery" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3993c94d-65af-43df-9cd4-17e08c0594b6" absoluteBounds="12.765, 4.5850000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1147e586-b1ad-4c31-841a-c957d88fea8a" absoluteBounds="12.5, 2.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_Throwout" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3e11917a-4f83-43a5-8c7a-c63c41f2a8e4" absoluteBounds="12.515, 2.8350000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.75 : 1.94314697265625); (7.25 : 1.94314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Prize/SS_Prize_SS_PrizeDetail" />
+      <nodes>
+        <classShapeMoniker Id="d1da624f-8d3d-47b7-b7fb-1beda80a165f" />
+        <classShapeMoniker Id="95bb704f-1a68-439d-a9ed-c789d95c7023" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.5 : 3.06814697265625); (14.75 : 3.06814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Throwout/SS_Throwout_SS_ThrowoutDetail" />
+      <nodes>
+        <classShapeMoniker Id="1147e586-b1ad-4c31-841a-c957d88fea8a" />
+        <classShapeMoniker Id="359f653a-4d91-4f22-bf5e-851393882b37" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1e1a5b36-814e-4b31-9d46-5cf4a8c9a931" absoluteBounds="12.5, 0.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_ScoreMethod" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba786b72-c441-4930-bc16-085c202fc046" absoluteBounds="12.515, 1.0850000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.5 : 1.41429768880208); (14.75 : 1.41429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_ScoreMethod/SS_ScoreMethod_SS_ScoreMethodDetail" />
+      <nodes>
+        <classShapeMoniker Id="1e1a5b36-814e-4b31-9d46-5cf4a8c9a931" />
+        <classShapeMoniker Id="3732cd99-b281-42fd-8b2b-807c8e5c1c37" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7a8dc254-9bdd-4100-b5b3-df3f3a5b1055" absoluteBounds="14, 11.5, 2, 4.8477197265625023">
+      <DataClassMoniker Name="/SailTallyDataContext/aspnet_Membership" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2cb0032d-bb56-4174-ad98-6c497b15caee" absoluteBounds="14.015, 11.96, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="531c701b-5510-4ec2-a099-ba0c609932ba" absoluteBounds="16.25, 6.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_Log" />
+      <nestedChildShapes>
+        <elementListCompartment Id="249d3d68-d1a8-4e97-8f2b-165e3b76d172" absoluteBounds="16.265, 6.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c90307fc-62f9-4a54-8580-2d32eee563f4" absoluteBounds="2.875, 4.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_RaceFleet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0fc0b233-916c-49a8-bada-325378e469a6" absoluteBounds="2.8899999999999997, 4.7100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0b1339bb-8463-40f3-b31b-d862f9be94f4" absoluteBounds="7.375, 11.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_Score" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cca50a03-a32e-42c2-ab1f-eaec8fdfe421" absoluteBounds="7.3900000000000006, 12.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1a77ed45-89ac-416e-a101-632a54e8a722" absoluteBounds="10.125, 1.125, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_FleetSery" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb4fcadb-af68-48d8-a7eb-2e02314d2b27" absoluteBounds="10.14, 1.585, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.9144426103965 : 3.20723714192708); (10.9144426103965 : 3.6875); (11.2570825822615 : 3.6875 : JumpStart); (11.4237492489281 : 3.6875 : JumpEnd); (12.375 : 3.6875); (12.375 : 4.2612939453125); (12.5 : 4.2612939453125); (12.5 : 7.28929768880208); (14 : 7.28929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_FleetSery/SS_FleetSery_SS_Registration" />
+      <nodes>
+        <classShapeMoniker Id="1a77ed45-89ac-416e-a101-632a54e8a722" />
+        <classShapeMoniker Id="6675b549-f857-4cb1-9389-7ead08afdcde" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.75 : 1.94314697265625); (10.125 : 1.94314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Prize/SS_Prize_SS_FleetSery" />
+      <nodes>
+        <classShapeMoniker Id="d1da624f-8d3d-47b7-b7fb-1beda80a165f" />
+        <classShapeMoniker Id="1a77ed45-89ac-416e-a101-632a54e8a722" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.5 : 1.66429768880208); (12.125 : 1.66429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_ScoreMethod/SS_ScoreMethod_SS_FleetSery" />
+      <nodes>
+        <classShapeMoniker Id="1e1a5b36-814e-4b31-9d46-5cf4a8c9a931" />
+        <classShapeMoniker Id="1a77ed45-89ac-416e-a101-632a54e8a722" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.75 : 4.84375); (12.5833333333333 : 4.84375 : JumpStart); (12.4166666666667 : 4.84375 : JumpEnd); (11.7708333333333 : 4.84375); (11.7708333333333 : 3.62209744124349); (11.7663892207931 : 3.62209744124349); (11.7663892207931 : 3.47280110677083)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Sery/SS_Sery_SS_FleetSery" />
+      <nodes>
+        <classShapeMoniker Id="5a086af0-d110-4097-9fbd-1cae7911b9d3" />
+        <classShapeMoniker Id="1a77ed45-89ac-416e-a101-632a54e8a722" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.5 : 2.92390055338542); (12.125 : 2.92390055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Throwout/SS_Throwout_SS_FleetSery" />
+      <nodes>
+        <classShapeMoniker Id="1147e586-b1ad-4c31-841a-c957d88fea8a" />
+        <classShapeMoniker Id="1a77ed45-89ac-416e-a101-632a54e8a722" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="eac296b2-27d8-4db4-8f6c-0a3098c3f922" absoluteBounds="10.125, 4, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_Fleet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0232b1e3-c351-4dd4-a7cf-c0e6cd2fdf47" absoluteBounds="10.14, 4.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.125 : 4.87677124023437); (9.95833333333333 : 4.87677124023437 : JumpStart); (9.79166666666667 : 4.87677124023437 : JumpEnd); (9.75 : 4.87677124023437); (9.75 : 3); (3.875 : 3); (3.875 : 4.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Fleet/SS_Fleet_SS_RaceFleet" />
+      <nodes>
+        <classShapeMoniker Id="eac296b2-27d8-4db4-8f6c-0a3098c3f922" />
+        <classShapeMoniker Id="c90307fc-62f9-4a54-8580-2d32eee563f4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.3404159155948 : 4); (11.3404159155948 : 3.20723714192708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Fleet/SS_Fleet_SS_FleetSery" />
+      <nodes>
+        <classShapeMoniker Id="eac296b2-27d8-4db4-8f6c-0a3098c3f922" />
+        <classShapeMoniker Id="1a77ed45-89ac-416e-a101-632a54e8a722" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="26f7de77-4752-4622-897a-b7dc4ae394fe" absoluteBounds="11.375, 12, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SailTallyDataContext/aspnet_User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ea1152f7-7916-4757-af36-1c6a46181cb7" absoluteBounds="11.39, 12.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(12.375 : 12); (12.375 : 11.2708968098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/aspnet_User/aspnet_User_SS_BoatOwner" />
+      <nodes>
+        <classShapeMoniker Id="26f7de77-4752-4622-897a-b7dc4ae394fe" />
+        <classShapeMoniker Id="bf4aebf2-955f-4441-9675-f646236f1595" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.375 : 13.0777498372396); (14 : 13.0777498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/aspnet_User/aspnet_User_aspnet_Membership" />
+      <nodes>
+        <classShapeMoniker Id="26f7de77-4752-4622-897a-b7dc4ae394fe" />
+        <classShapeMoniker Id="7a8dc254-9bdd-4100-b5b3-df3f3a5b1055" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="22bdf7da-6736-436b-ad27-1a742346ef87" absoluteBounds="10.25, 6.375, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_Boat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb0c041d-e686-4537-8e6d-cd2cc0e83e16" absoluteBounds="10.265, 6.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.8125 : 9.10740397135417); (11.8125 : 9.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Boat/SS_Boat_SS_BoatOwner" />
+      <nodes>
+        <classShapeMoniker Id="22bdf7da-6736-436b-ad27-1a742346ef87" />
+        <classShapeMoniker Id="bf4aebf2-955f-4441-9675-f646236f1595" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.25 : 6.83214884440104); (12.4166666666667 : 6.83214884440104 : JumpStart); (12.5833333333333 : 6.83214884440104 : JumpEnd); (14 : 6.83214884440104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Boat/SS_Boat_SS_Registration" />
+      <nodes>
+        <classShapeMoniker Id="22bdf7da-6736-436b-ad27-1a742346ef87" />
+        <classShapeMoniker Id="6675b549-f857-4cb1-9389-7ead08afdcde" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.625 : 9.10740397135417); (10.625 : 11.78125); (9.375 : 11.78125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Boat/SS_Boat_SS_Score" />
+      <nodes>
+        <classShapeMoniker Id="22bdf7da-6736-436b-ad27-1a742346ef87" />
+        <classShapeMoniker Id="0b1339bb-8463-40f3-b31b-d862f9be94f4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.1875 : 5.9631982421875); (11.1875 : 6.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Fleet/SS_Fleet_SS_Boat" />
+      <nodes>
+        <classShapeMoniker Id="eac296b2-27d8-4db4-8f6c-0a3098c3f922" />
+        <classShapeMoniker Id="22bdf7da-6736-436b-ad27-1a742346ef87" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2959577d-9660-4dd6-ad60-e380c688d488" absoluteBounds="1.625, 14.375, 2, 2.15549967447917">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b948616a-ad28-4af8-99ec-ded253be6f13" absoluteBounds="1.6400000000000001, 14.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="68168dfc-51a1-4cc1-9212-c462d4b7da67" absoluteBounds="4.375, 14.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_UserRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8107e85-ba3c-4e38-b379-b5589e372da6" absoluteBounds="4.39, 15.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.625 : 15.3181469726562); (4.375 : 15.3181469726562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_User/SS_User_SS_UserRole" />
+      <nodes>
+        <classShapeMoniker Id="2959577d-9660-4dd6-ad60-e380c688d488" />
+        <classShapeMoniker Id="68168dfc-51a1-4cc1-9212-c462d4b7da67" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="77c93fab-d361-4ff7-932a-0e65eba589c1" absoluteBounds="7.125, 14.625, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13c62cf5-f9b5-43c4-b2d2-e0f3b9128a22" absoluteBounds="7.14, 15.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.125 : 15.2219962565104); (6.375 : 15.2219962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Role/SS_Role_SS_UserRole" />
+      <nodes>
+        <classShapeMoniker Id="77c93fab-d361-4ff7-932a-0e65eba589c1" />
+        <classShapeMoniker Id="68168dfc-51a1-4cc1-9212-c462d4b7da67" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="60043737-6ef3-493f-b1f7-6509033fa7b4" absoluteBounds="7.5, 4, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_Result" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6de4e19f-276b-41db-b130-f28b90a9bf5c" absoluteBounds="7.515, 4.46, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.25 : 7.03445556640625); (9.70833333333333 : 7.03445556640625 : JumpStart); (9.54166666666667 : 7.03445556640625 : JumpEnd); (9.5 : 7.03445556640625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Boat/SS_Boat_SS_Result" />
+      <nodes>
+        <classShapeMoniker Id="22bdf7da-6736-436b-ad27-1a742346ef87" />
+        <classShapeMoniker Id="60043737-6ef3-493f-b1f7-6509033fa7b4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.125 : 3.20723714192708); (9.95833333333333 : 3.20723714192708 : JumpStart); (9.79166666666667 : 3.20723714192708 : JumpEnd); (7.59375 : 3.20723714192708); (7.59375 : 4)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_FleetSery/SS_FleetSery_SS_Result" />
+      <nodes>
+        <classShapeMoniker Id="1a77ed45-89ac-416e-a101-632a54e8a722" />
+        <classShapeMoniker Id="60043737-6ef3-493f-b1f7-6509033fa7b4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8edd22f6-804c-4d7f-87c3-0bcab7c68abf" absoluteBounds="7.625, 8.25, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_Penalty" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1cc925ed-7a0a-43fa-9cc3-ffd95df4a560" absoluteBounds="7.64, 8.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.5 : 11.3670068359375); (8.5 : 11.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Penalty/SS_Penalty_SS_Score" />
+      <nodes>
+        <classShapeMoniker Id="8edd22f6-804c-4d7f-87c3-0bcab7c68abf" />
+        <classShapeMoniker Id="0b1339bb-8463-40f3-b31b-d862f9be94f4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5625 : 8.25); (8.5625 : 7.6939111328125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Penalty/SS_Penalty_SS_Result" />
+      <nodes>
+        <classShapeMoniker Id="8edd22f6-804c-4d7f-87c3-0bcab7c68abf" />
+        <classShapeMoniker Id="60043737-6ef3-493f-b1f7-6509033fa7b4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e526626e-4b77-4919-b256-b67660628902" absoluteBounds="0.5, 1.125, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_ResultSummary" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e25fcdc-0f1f-4ddd-afd0-c20a93c52abb" absoluteBounds="0.51500000000000012, 1.585, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.25 : 6.375); (11.25 : 6.2131982421875); (9.875 : 6.2131982421875); (9.875 : 2.88304768880208); (2.5 : 2.88304768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Boat/SS_Boat_SS_ResultSummary" />
+      <nodes>
+        <classShapeMoniker Id="22bdf7da-6736-436b-ad27-1a742346ef87" />
+        <classShapeMoniker Id="e526626e-4b77-4919-b256-b67660628902" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.125 : 1.125); (9.75 : 0.75); (2.875 : 0.75); (2.5 : 1.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_FleetSery/SS_FleetSery_SS_ResultSummary" />
+      <nodes>
+        <classShapeMoniker Id="1a77ed45-89ac-416e-a101-632a54e8a722" />
+        <classShapeMoniker Id="e526626e-4b77-4919-b256-b67660628902" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="78fd5e2e-9fee-46df-bea4-c4899864ea88" absoluteBounds="2.125, 9.5, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_Trophy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8170d074-3e39-4578-8104-5c2cf3dcdfcb" absoluteBounds="2.14, 9.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.125 : 5.34640886035156); (9.95833333333333 : 5.34640886035156 : JumpStart); (9.79166666666667 : 5.34640886035156 : JumpEnd); (9.5625 : 5.34640886035156); (9.5625 : 7.29516845703125); (7.33333333333333 : 7.29516845703125 : JumpStart); (7.16666666666667 : 7.29516845703125 : JumpEnd); (6.27083333333333 : 7.29516845703125 : JumpStart); (6.10416666666667 : 7.29516845703125 : JumpEnd); (4.61458333333333 : 7.29516845703125 : JumpStart); (4.44791666666667 : 7.29516845703125 : JumpEnd); (3.5624995 : 7.29516845703125); (3.5624995 : 9.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Fleet/SS_Fleet_SS_Trophy" />
+      <nodes>
+        <classShapeMoniker Id="eac296b2-27d8-4db4-8f6c-0a3098c3f922" />
+        <classShapeMoniker Id="78fd5e2e-9fee-46df-bea4-c4899864ea88" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.75 : 5.31022457486979); (12.5833333333333 : 5.31022457486979 : JumpStart); (12.4166666666667 : 5.31022457486979 : JumpEnd); (12.1875 : 5.31022457486979); (12.1875 : 5.81604248046875); (9.95833333333333 : 5.81604248046875 : JumpStart); (9.79166666666667 : 5.81604248046875 : JumpEnd); (9.625 : 5.81604248046875); (9.625 : 7.35766845703125); (7.33333333333333 : 7.35766845703125 : JumpStart); (7.16666666666667 : 7.35766845703125 : JumpEnd); (4.61458333333333 : 7.35766845703125 : JumpStart); (4.44791666666667 : 7.35766845703125 : JumpEnd); (3.87500175 : 7.35766845703125); (3.87500175 : 9.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Sery/SS_Sery_SS_Trophy" />
+      <nodes>
+        <classShapeMoniker Id="5a086af0-d110-4097-9fbd-1cae7911b9d3" />
+        <classShapeMoniker Id="78fd5e2e-9fee-46df-bea4-c4899864ea88" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a57b532b-be5f-477a-b5d0-faecf83998f8" absoluteBounds="15.5, 4.125, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_Time" />
+      <nestedChildShapes>
+        <elementListCompartment Id="70edbe9a-2195-4c96-b9dd-1218e99bb9d9" absoluteBounds="15.515, 4.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="faf0839c-b65b-4c4f-bd9b-82306ab303fd" absoluteBounds="0.75, 6.5, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_Season" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f500c9df-20c6-479d-ba50-5257db092a79" absoluteBounds="0.765, 6.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 6.89758472851562); (4.44791666666667 : 6.89758472851562 : JumpStart); (4.61458333333333 : 6.89758472851562 : JumpEnd); (7.25 : 6.89758472851562); (7.25 : 7.9439111328125); (8.47916666666667 : 7.9439111328125 : JumpStart); (8.64583333333333 : 7.9439111328125 : JumpEnd); (10 : 7.9439111328125); (10 : 9.25); (10.5416666666667 : 9.25 : JumpStart); (10.7083333333333 : 9.25 : JumpEnd); (12.375 : 9.25); (12.375 : 9.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Season/SS_Season_SS_BoatOwner" />
+      <nodes>
+        <classShapeMoniker Id="faf0839c-b65b-4c4f-bd9b-82306ab303fd" />
+        <classShapeMoniker Id="bf4aebf2-955f-4441-9675-f646236f1595" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.97195556640625); (3.47916616666667 : 7.97195556640625 : JumpStart); (3.64583283333333 : 7.97195556640625 : JumpEnd); (3.79166841666667 : 7.97195556640625 : JumpStart); (3.95833508333333 : 7.97195556640625 : JumpEnd); (4.44791666666667 : 7.97195556640625 : JumpStart); (4.61458333333333 : 7.97195556640625 : JumpEnd); (6.10416666666667 : 7.97195556640625 : JumpStart); (6.27083333333333 : 7.97195556640625 : JumpEnd); (8.47916666666667 : 7.97195556640625 : JumpStart); (8.64583333333333 : 7.97195556640625 : JumpEnd); (10.0625 : 7.97195556640625); (10.0625 : 3.30098714192708); (10.405135971865 : 3.30098714192708 : JumpStart); (10.5718026385316 : 3.30098714192708 : JumpEnd); (10.9144426103965 : 3.30098714192708); (10.9144426103965 : 1.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Season/SS_Season_SS_FleetSery" />
+      <nodes>
+        <classShapeMoniker Id="faf0839c-b65b-4c4f-bd9b-82306ab303fd" />
+        <classShapeMoniker Id="1a77ed45-89ac-416e-a101-632a54e8a722" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.6875); (4.44791666666667 : 6.6875 : JumpStart); (4.61458333333333 : 6.6875 : JumpEnd); (7.5 : 6.6875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Season/SS_Season_SS_Result" />
+      <nodes>
+        <classShapeMoniker Id="faf0839c-b65b-4c4f-bd9b-82306ab303fd" />
+        <classShapeMoniker Id="60043737-6ef3-493f-b1f7-6509033fa7b4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.625 : 6.5); (1.625 : 5.01121256510417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Season/SS_Season_SS_ResultSummary" />
+      <nodes>
+        <classShapeMoniker Id="faf0839c-b65b-4c4f-bd9b-82306ab303fd" />
+        <classShapeMoniker Id="e526626e-4b77-4919-b256-b67660628902" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.4375 : 8.25354248046875); (2.4375 : 9.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Season/SS_Season_SS_Trophy" />
+      <nodes>
+        <classShapeMoniker Id="faf0839c-b65b-4c4f-bd9b-82306ab303fd" />
+        <classShapeMoniker Id="78fd5e2e-9fee-46df-bea4-c4899864ea88" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0f4752d3-8002-42d4-8741-aa10cb266fa8" absoluteBounds="5.25, 3.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_RaceSery" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7bac3249-67e9-4b59-87ef-50835ae69845" absoluteBounds="5.265, 3.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.4884693051983 : 3.20723714192708); (10.4884693051983 : 3.9375); (9.95833333333333 : 3.9375 : JumpStart); (9.79166666666667 : 3.9375 : JumpEnd); (7.34375 : 3.9375); (7.34375 : 4.32774983723958); (7.25 : 4.32774983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_FleetSery/SS_FleetSery_SS_RaceSery" />
+      <nodes>
+        <classShapeMoniker Id="1a77ed45-89ac-416e-a101-632a54e8a722" />
+        <classShapeMoniker Id="0f4752d3-8002-42d4-8741-aa10cb266fa8" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8d79e1ba-56c8-4099-bfa7-6525c234966c" absoluteBounds="5.25, 8.75, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/SailTallyDataContext/SS_Race" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0fdf0088-2a16-4ec0-b5fb-39a20f35aa6b" absoluteBounds="5.265, 9.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.25 : 9.09375); (4.53125 : 9.09375); (4.53125 : 6.40549967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Race/SS_Race_SS_RaceFleet" />
+      <nodes>
+        <classShapeMoniker Id="8d79e1ba-56c8-4099-bfa7-6525c234966c" />
+        <classShapeMoniker Id="c90307fc-62f9-4a54-8580-2d32eee563f4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 12.1306062825521); (7.375 : 12.1306062825521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Race/SS_Race_SS_Score" />
+      <nodes>
+        <classShapeMoniker Id="8d79e1ba-56c8-4099-bfa7-6525c234966c" />
+        <classShapeMoniker Id="0b1339bb-8463-40f3-b31b-d862f9be94f4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.1875 : 8.75); (6.1875 : 5.40549967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Race/SS_Race_SS_RaceSery" />
+      <nodes>
+        <classShapeMoniker Id="8d79e1ba-56c8-4099-bfa7-6525c234966c" />
+        <classShapeMoniker Id="0f4752d3-8002-42d4-8741-aa10cb266fa8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.63355951171875); (3.47916616666667 : 7.63355951171875 : JumpStart); (3.64583283333333 : 7.63355951171875 : JumpEnd); (3.79166841666667 : 7.63355951171875 : JumpStart); (3.95833508333333 : 7.63355951171875 : JumpEnd); (4.44791666666667 : 7.63355951171875 : JumpStart); (4.61458333333333 : 7.63355951171875 : JumpEnd); (6.10416666666667 : 7.63355951171875 : JumpStart); (6.27083333333333 : 7.63355951171875 : JumpEnd); (6.7500025 : 7.63355951171875); (6.7500025 : 8.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SailTallyDataContext/SS_Season/SS_Season_SS_Race" />
+      <nodes>
+        <classShapeMoniker Id="faf0839c-b65b-4c4f-bd9b-82306ab303fd" />
+        <classShapeMoniker Id="8d79e1ba-56c8-4099-bfa7-6525c234966c" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

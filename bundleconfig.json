@@ -1,0 +1,20 @@
+[
+  {
+    "outputFileName": "Scripts/sailtally.js",
+    "inputFiles": [
+      "Scripts/sailtally.js"
+    ]
+  },
+  {
+    "outputFileName": "Styles/sailtally.min.min.css",
+    "inputFiles": [
+      "Styles/sailtally.min.css"
+    ]
+  },
+  {
+    "outputFileName": "Styles/sailtally.min.css",
+    "inputFiles": [
+      "Styles/sailtally.css"
+    ]
+  }
+]

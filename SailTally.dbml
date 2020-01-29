@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SailTally_Club" Class="SailTallyDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=tcp:s11.winhost.com;Initial Catalog=DB_87233_sailtally;Integrated Security=False;User ID=DB_87233_sailtally_user" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SailTallyConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SS_ThrowoutDetail" Member="SS_ThrowoutDetails">
+    <Type Name="SS_ThrowoutDetail">
+      <Column Name="ThrowoutDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ThrowoutID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RaceCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ThrowoutCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SS_Throwout_SS_ThrowoutDetail" Member="SS_Throwout" ThisKey="ThrowoutID" OtherKey="ThrowoutID" Type="SS_Throwout" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_BoatOwner" Member="SS_BoatOwners">
+    <Type Name="SS_BoatOwner">
+      <Column Name="BoatOwnerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BoatID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SeasonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WhenPaymentRecd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="aspnet_User_SS_BoatOwner" Member="aspnet_User" ThisKey="UserID" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="SS_Boat_SS_BoatOwner" Member="SS_Boat" ThisKey="BoatID" OtherKey="BoatID" Type="SS_Boat" IsForeignKey="true" />
+      <Association Name="SS_Season_SS_BoatOwner" Member="SS_Season" ThisKey="SeasonID" OtherKey="SeasonID" Type="SS_Season" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_Prize" Member="SS_Prizes">
+    <Type Name="SS_Prize">
+      <Column Name="PrizeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PrizeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SS_Prize_SS_PrizeDetail" Member="SS_PrizeDetails" ThisKey="PrizeID" OtherKey="PrizeID" Type="SS_PrizeDetail" />
+      <Association Name="SS_Prize_SS_FleetSery" Member="SS_FleetSeries" ThisKey="PrizeID" OtherKey="PrizeID" Type="SS_FleetSery" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_PrizeDetail" Member="SS_PrizeDetails">
+    <Type Name="SS_PrizeDetail">
+      <Column Name="PrizeDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PrizeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BoatCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrizeCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SS_Prize_SS_PrizeDetail" Member="SS_Prize" ThisKey="PrizeID" OtherKey="PrizeID" Type="SS_Prize" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_Registration" Member="SS_Registrations">
+    <Type Name="SS_Registration">
+      <Column Name="RegistrationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FleetSeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BoatID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WhenDuesPaid" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SS_FleetSery_SS_Registration" Member="SS_FleetSery" ThisKey="FleetSeriesID" OtherKey="FleetSeriesID" Type="SS_FleetSery" IsForeignKey="true" />
+      <Association Name="SS_Boat_SS_Registration" Member="SS_Boat" ThisKey="BoatID" OtherKey="BoatID" Type="SS_Boat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_ScoreMethodDetail" Member="SS_ScoreMethodDetails">
+    <Type Name="SS_ScoreMethodDetail">
+      <Column Name="ScoreMethodDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ScoreMethodID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Place" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Points" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="SS_ScoreMethod_SS_ScoreMethodDetail" Member="SS_ScoreMethod" ThisKey="ScoreMethodID" OtherKey="ScoreMethodID" Type="SS_ScoreMethod" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_Series" Member="SS_Series">
+    <Type Name="SS_Sery">
+      <Column Name="SeriesID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SeriesName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsClubSeries" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsBOTYCalc" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SS_Sery_SS_FleetSery" Member="SS_FleetSeries" ThisKey="SeriesID" OtherKey="SeriesID" Type="SS_FleetSery" />
+      <Association Name="SS_Sery_SS_Trophy" Member="SS_Trophies" ThisKey="SeriesID" OtherKey="SeriesID" Type="SS_Trophy" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_Throwout" Member="SS_Throwouts">
+    <Type Name="SS_Throwout">
+      <Column Name="ThrowoutID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ThrowoutName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SS_Throwout_SS_ThrowoutDetail" Member="SS_ThrowoutDetails" ThisKey="ThrowoutID" OtherKey="ThrowoutID" Type="SS_ThrowoutDetail" />
+      <Association Name="SS_Throwout_SS_FleetSery" Member="SS_FleetSeries" ThisKey="ThrowoutID" OtherKey="ThrowoutID" Type="SS_FleetSery" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_ScoreMethod" Member="SS_ScoreMethods">
+    <Type Name="SS_ScoreMethod">
+      <Column Name="ScoreMethodID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ScoreMethodName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SS_ScoreMethod_SS_ScoreMethodDetail" Member="SS_ScoreMethodDetails" ThisKey="ScoreMethodID" OtherKey="ScoreMethodID" Type="SS_ScoreMethodDetail" />
+      <Association Name="SS_ScoreMethod_SS_FleetSery" Member="SS_FleetSeries" ThisKey="ScoreMethodID" OtherKey="ScoreMethodID" Type="SS_FleetSery" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Membership" Member="aspnet_Memberships">
+    <Type Name="aspnet_Membership">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordFormat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordSalt" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="MobilePIN" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="LoweredEmail" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PasswordQuestion" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PasswordAnswer" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsApproved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLockedOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLoginDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastPasswordChangedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLockoutDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAttemptCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAttemptWindowStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAnswerAttemptCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAnswerAttemptWindowStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="aspnet_User_aspnet_Membership" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_Log" Member="SS_Logs">
+    <Type Name="SS_Log">
+      <Column Name="LogID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LogDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Event" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Source" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Operation" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Reference" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Details" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsFlagged" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_RaceFleet" Member="SS_RaceFleets">
+    <Type Name="SS_RaceFleet">
+      <Column Name="RaceFleetID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RaceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FleetID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsAbandoned" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Course" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Distance" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DistanceUnits" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="SS_Fleet_SS_RaceFleet" Member="SS_Fleet" ThisKey="FleetID" OtherKey="FleetID" Type="SS_Fleet" IsForeignKey="true" />
+      <Association Name="SS_Race_SS_RaceFleet" Member="SS_Race" ThisKey="RaceID" OtherKey="RaceID" Type="SS_Race" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_Score" Member="SS_Scores">
+    <Type Name="SS_Score">
+      <Column Name="ScoreID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RaceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BoatID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PenaltyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FinishPlace" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FinishTime" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="AdjustedTime" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Association Name="SS_Boat_SS_Score" Member="SS_Boat" ThisKey="BoatID" OtherKey="BoatID" Type="SS_Boat" IsForeignKey="true" />
+      <Association Name="SS_Penalty_SS_Score" Member="SS_Penalty" ThisKey="PenaltyID" OtherKey="PenaltyID" Type="SS_Penalty" IsForeignKey="true" />
+      <Association Name="SS_Race_SS_Score" Member="SS_Race" ThisKey="RaceID" OtherKey="RaceID" Type="SS_Race" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_FleetSeries" Member="SS_FleetSeries">
+    <Type Name="SS_FleetSery">
+      <Column Name="FleetSeriesID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SeasonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FleetID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScoreMethodID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ThrowoutID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrizeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SS_FleetSery_SS_Registration" Member="SS_Registrations" ThisKey="FleetSeriesID" OtherKey="FleetSeriesID" Type="SS_Registration" />
+      <Association Name="SS_FleetSery_SS_Result" Member="SS_Results" ThisKey="FleetSeriesID" OtherKey="FleetSeriesID" Type="SS_Result" />
+      <Association Name="SS_FleetSery_SS_ResultSummary" Member="SS_ResultSummaries" ThisKey="FleetSeriesID" OtherKey="FleetSeriesID" Type="SS_ResultSummary" />
+      <Association Name="SS_FleetSery_SS_RaceSery" Member="SS_RaceSeries" ThisKey="FleetSeriesID" OtherKey="FleetSeriesID" Type="SS_RaceSery" />
+      <Association Name="SS_Prize_SS_FleetSery" Member="SS_Prize" ThisKey="PrizeID" OtherKey="PrizeID" Type="SS_Prize" IsForeignKey="true" />
+      <Association Name="SS_ScoreMethod_SS_FleetSery" Member="SS_ScoreMethod" ThisKey="ScoreMethodID" OtherKey="ScoreMethodID" Type="SS_ScoreMethod" IsForeignKey="true" />
+      <Association Name="SS_Sery_SS_FleetSery" Member="SS_Sery" ThisKey="SeriesID" OtherKey="SeriesID" Type="SS_Sery" IsForeignKey="true" />
+      <Association Name="SS_Throwout_SS_FleetSery" Member="SS_Throwout" ThisKey="ThrowoutID" OtherKey="ThrowoutID" Type="SS_Throwout" IsForeignKey="true" />
+      <Association Name="SS_Fleet_SS_FleetSery" Member="SS_Fleet" ThisKey="FleetID" OtherKey="FleetID" Type="SS_Fleet" IsForeignKey="true" />
+      <Association Name="SS_Season_SS_FleetSery" Member="SS_Season" ThisKey="SeasonID" OtherKey="SeasonID" Type="SS_Season" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_Fleet" Member="SS_Fleets">
+    <Type Name="SS_Fleet">
+      <Column Name="FleetID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FleetName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="ScheduleOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ListOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SS_Fleet_SS_RaceFleet" Member="SS_RaceFleets" ThisKey="FleetID" OtherKey="FleetID" Type="SS_RaceFleet" />
+      <Association Name="SS_Fleet_SS_FleetSery" Member="SS_FleetSeries" ThisKey="FleetID" OtherKey="FleetID" Type="SS_FleetSery" />
+      <Association Name="SS_Fleet_SS_Boat" Member="SS_Boats" ThisKey="FleetID" OtherKey="FleetID" Type="SS_Boat" />
+      <Association Name="SS_Fleet_SS_Trophy" Member="SS_Trophies" ThisKey="FleetID" OtherKey="FleetID" Type="SS_Trophy" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Users" Member="aspnet_Users">
+    <Type Name="aspnet_User">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredUserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileAlias" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="IsAnonymous" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_User_SS_BoatOwner" Member="SS_BoatOwners" ThisKey="UserId" OtherKey="UserID" Type="SS_BoatOwner" />
+      <Association Name="aspnet_User_aspnet_Membership" Member="aspnet_Membership" ThisKey="UserId" OtherKey="UserId" Type="aspnet_Membership" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_Boat" Member="SS_Boats">
+    <Type Name="SS_Boat">
+      <Column Name="BoatID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FleetID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BoatName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SailNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Skipper" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Crew" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsClubBoat" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BoatOrder" Type="System.Int64" DbType="BigInt" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsRegistered" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SS_Boat_SS_BoatOwner" Member="SS_BoatOwners" ThisKey="BoatID" OtherKey="BoatID" Type="SS_BoatOwner" />
+      <Association Name="SS_Boat_SS_Registration" Member="SS_Registrations" ThisKey="BoatID" OtherKey="BoatID" Type="SS_Registration" />
+      <Association Name="SS_Boat_SS_Score" Member="SS_Scores" ThisKey="BoatID" OtherKey="BoatID" Type="SS_Score" />
+      <Association Name="SS_Boat_SS_Result" Member="SS_Results" ThisKey="BoatID" OtherKey="BoatID" Type="SS_Result" />
+      <Association Name="SS_Boat_SS_ResultSummary" Member="SS_ResultSummaries" ThisKey="BoatID" OtherKey="BoatID" Type="SS_ResultSummary" />
+      <Association Name="SS_Fleet_SS_Boat" Member="SS_Fleet" ThisKey="FleetID" OtherKey="FleetID" Type="SS_Fleet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_User" Member="SS_Users">
+    <Type Name="SS_User">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsEncryptedPwd" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Firstname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="SS_User_SS_UserRole" Member="SS_UserRoles" ThisKey="UserID" OtherKey="UserID" Type="SS_UserRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_UserRole" Member="SS_UserRoles">
+    <Type Name="SS_UserRole">
+      <Column Name="UserRoleID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SS_User_SS_UserRole" Member="SS_User" ThisKey="UserID" OtherKey="UserID" Type="SS_User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="SS_Role_SS_UserRole" Member="SS_Role" ThisKey="RoleID" OtherKey="RoleID" Type="SS_Role" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_Role" Member="SS_Roles">
+    <Type Name="SS_Role">
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="SS_Role_SS_UserRole" Member="SS_UserRoles" ThisKey="RoleID" OtherKey="RoleID" Type="SS_UserRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_Result" Member="SS_Results">
+    <Type Name="SS_Result">
+      <Column Name="ResultID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SeasonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FleetSeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BoatID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PenaltyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SailNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RaceNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FinishPlace" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Points" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="PenaltyName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="IsNonPenalty" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsThrowout" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CanThrowout" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsAbandoned" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsAbsent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SS_Boat_SS_Result" Member="SS_Boat" ThisKey="BoatID" OtherKey="BoatID" Type="SS_Boat" IsForeignKey="true" />
+      <Association Name="SS_FleetSery_SS_Result" Member="SS_FleetSery" ThisKey="FleetSeriesID" OtherKey="FleetSeriesID" Type="SS_FleetSery" IsForeignKey="true" />
+      <Association Name="SS_Penalty_SS_Result" Member="SS_Penalty" ThisKey="PenaltyID" OtherKey="PenaltyID" Type="SS_Penalty" IsForeignKey="true" />
+      <Association Name="SS_Season_SS_Result" Member="SS_Season" ThisKey="SeasonID" OtherKey="SeasonID" Type="SS_Season" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_Penalty" Member="SS_Penalties">
+    <Type Name="SS_Penalty">
+      <Column Name="PenaltyID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PenaltyName" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="PenaltyRate" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="IsNonPenalty" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsDisqualified" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsExcludable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLastPlusOne" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLastPlusTwo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsOverridePoints" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UsePlace" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsDoublePoints" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SS_Penalty_SS_Score" Member="SS_Scores" ThisKey="PenaltyID" OtherKey="PenaltyID" Type="SS_Score" />
+      <Association Name="SS_Penalty_SS_Result" Member="SS_Results" ThisKey="PenaltyID" OtherKey="PenaltyID" Type="SS_Result" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_ResultSummary" Member="SS_ResultSummaries">
+    <Type Name="SS_ResultSummary">
+      <Column Name="ResultSummaryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SeasonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FleetSeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FleetName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SeriesName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BoatID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SailNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BoatName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsRegisteredBoat" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Skipper" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Crew" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TotalPoints" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="TieBreakerStr" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Position" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SS_Boat_SS_ResultSummary" Member="SS_Boat" ThisKey="BoatID" OtherKey="BoatID" Type="SS_Boat" IsForeignKey="true" />
+      <Association Name="SS_FleetSery_SS_ResultSummary" Member="SS_FleetSery" ThisKey="FleetSeriesID" OtherKey="FleetSeriesID" Type="SS_FleetSery" IsForeignKey="true" />
+      <Association Name="SS_Season_SS_ResultSummary" Member="SS_Season" ThisKey="SeasonID" OtherKey="SeasonID" Type="SS_Season" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_Trophy" Member="SS_Trophies">
+    <Type Name="SS_Trophy">
+      <Column Name="TrophyID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TrophyName" Type="System.String" DbType="NVarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Donor" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="SeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FleetID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RaceNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Place" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShiftToNext" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SeasonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BestSeason" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SS_Fleet_SS_Trophy" Member="SS_Fleet" ThisKey="FleetID" OtherKey="FleetID" Type="SS_Fleet" IsForeignKey="true" />
+      <Association Name="SS_Sery_SS_Trophy" Member="SS_Sery" ThisKey="SeriesID" OtherKey="SeriesID" Type="SS_Sery" IsForeignKey="true" />
+      <Association Name="SS_Season_SS_Trophy" Member="SS_Season" ThisKey="SeasonID" OtherKey="SeasonID" Type="SS_Season" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_Time" Member="SS_Times">
+    <Type Name="SS_Time">
+      <Column Name="TimeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TimeStr" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NextTimeOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsBackToBackSlot" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayTime" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_Season" Member="SS_Seasons">
+    <Type Name="SS_Season">
+      <Column Name="SeasonID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SeasonName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LockResults" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SS_Season_SS_BoatOwner" Member="SS_BoatOwners" ThisKey="SeasonID" OtherKey="SeasonID" Type="SS_BoatOwner" />
+      <Association Name="SS_Season_SS_FleetSery" Member="SS_FleetSeries" ThisKey="SeasonID" OtherKey="SeasonID" Type="SS_FleetSery" />
+      <Association Name="SS_Season_SS_Result" Member="SS_Results" ThisKey="SeasonID" OtherKey="SeasonID" Type="SS_Result" />
+      <Association Name="SS_Season_SS_ResultSummary" Member="SS_ResultSummaries" ThisKey="SeasonID" OtherKey="SeasonID" Type="SS_ResultSummary" />
+      <Association Name="SS_Season_SS_Trophy" Member="SS_Trophies" ThisKey="SeasonID" OtherKey="SeasonID" Type="SS_Trophy" />
+      <Association Name="SS_Season_SS_Race" Member="SS_Races" ThisKey="SeasonID" OtherKey="SeasonID" Type="SS_Race" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_RaceSeries" Member="SS_RaceSeries">
+    <Type Name="SS_RaceSery">
+      <Column Name="RaceSeriesID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SeasonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RaceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FleetSeriesID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RaceNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScorePointsFactor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsScoreExcludable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SS_FleetSery_SS_RaceSery" Member="SS_FleetSery" ThisKey="FleetSeriesID" OtherKey="FleetSeriesID" Type="SS_FleetSery" IsForeignKey="true" />
+      <Association Name="SS_Race_SS_RaceSery" Member="SS_Race" ThisKey="RaceID" OtherKey="RaceID" Type="SS_Race" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SS_Race" Member="SS_Races">
+    <Type Name="SS_Race">
+      <Column Name="RaceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SeasonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirstWarningDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FirstWarningDateOnly" Type="System.DateTime" DbType="Date" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ActualDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DockedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PRO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AssistPRO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Helper" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WindDirection" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CourseChange" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="WindSpeed" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="WindUnits" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Protests" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Comments" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FirstWarningTimeOnly" Type="System.String" DbType="VarChar(7)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SS_Race_SS_RaceFleet" Member="SS_RaceFleets" ThisKey="RaceID" OtherKey="RaceID" Type="SS_RaceFleet" />
+      <Association Name="SS_Race_SS_Score" Member="SS_Scores" ThisKey="RaceID" OtherKey="RaceID" Type="SS_Score" />
+      <Association Name="SS_Race_SS_RaceSery" Member="SS_RaceSeries" ThisKey="RaceID" OtherKey="RaceID" Type="SS_RaceSery" />
+      <Association Name="SS_Season_SS_Race" Member="SS_Season" ThisKey="SeasonID" OtherKey="SeasonID" Type="SS_Season" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
