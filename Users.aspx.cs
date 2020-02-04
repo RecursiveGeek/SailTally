@@ -76,7 +76,7 @@ namespace SailTally
                 cell.Controls.Add(new Label { Text = "&nbsp;" });
 
                 var user = Membership.GetUser();
-                if (user != null && !String.Equals(membershipUser.UserName, user.UserName, StringComparison.CurrentCultureIgnoreCase))
+                if (user != null && !string.Equals(membershipUser.UserName, user.UserName, StringComparison.CurrentCultureIgnoreCase))
                 {
                     link = new LinkButton {Text = "Delete", CommandArgument = membershipUser.UserName};
                     link.Click += linkDelete_Click;

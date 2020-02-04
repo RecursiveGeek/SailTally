@@ -59,7 +59,7 @@
                                 <li class="divider"></li>
                                 <li><a runat="server" href="~/SeasonCopy.aspx">Season Copy</a></li>
                                 <li class="divider"></li>
-                                <li><a runat="server" href="~/Docs/SailTally.pdf" target="_blank">Manual</a></li>
+                                <li><a runat="server" href="https://github.com/RecursiveGeek/SailTally/blob/master/README.md" target="_blank">Documentation</a></li>
                             </ul>
                         </li>
                         <li><a runat="server" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#">Setup <span class="caret"></span></a>

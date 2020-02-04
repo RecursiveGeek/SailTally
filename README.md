@@ -13,14 +13,14 @@ Whether you sail for pleasure or racing competitively, be sure to keep it happy.
 Hans Dickel is currently the IT Director of the Web Development Team at [Daikin Applied Americas](www.daikinapplied.com).  At the time this project was started, he was the founder of Aeriden LLC, a Microsoft partner focused on web development and software services on the .NET Platform and DevOps.  Having been an avid one-design sailor (C Scow, E Scow, Melges 17, A Scow, Sonar, and a mix of larger boats) and volunteer for the MYC (donating IT services, hosting, software development, former board member and flag officer), this project was developed as part of donating to the club.
 
 # Database Schema
-
+View the PDF document of the [DB Schema](/Setup/SailTally%20DB%20Schema.pdf).
 
 # Installation
 ## Deployment Requirements
 
 - .NET Framework 4.6.1
 - One of the following databases:
-    - Microsoft SQL Server 2012+ with sql authentication enabled or Integration Authentication using an IIS Applicaiton Pool account
+    - Microsoft SQL Server 2012+ with sql authentication enabled or Integration Authentication using an IIS Application Pool account
     - Azure DB v12+ with sql authentication
 - Internet information Server (IIS) 7.0+
 - Visual Studio 2017+
@@ -36,9 +36,9 @@ Make sure IIS is installed on the desired Operating System.
 ## Setup
 Create a new SQL Server Database and run the included SQL Script.
 
-For new installations, run the sql script *setup\SailTally_vX.Y New.sql*, where X.Y is the actual version of sailTally being installed.
+For new installations, run the sql script *setup\SailTally_vX.Y_New.sql*, where X.Y is the actual version of sailTally being installed.
 
-For upgrades, locate the SQL script *setup\Sailtally_vX.Y Upgrade from Z.A.sql*, where Z.A is the current version installed and X.Y is hte new version being installed.
+For upgrades, locate the SQL script *setup\Sailtally_vX.Y_Upgrade_from_vZ.A.sql*, where Z.A is the current version installed and X.Y is hte new version being installed.
 
 Note that you may need to run more than one upgrade script to get up to the current released version.
 
@@ -56,7 +56,7 @@ An alternative is to grant this user db_owner access (not recommended for Produc
 The default SailTally username and password are as follows:
 
 - User: stadmin
-- Password: SailFast
+- Password: Sail27Fast!
 
 It is recommended the password be changed before the site is publicly available.
 
@@ -65,9 +65,8 @@ It is recommended the password be changed before the site is publicly available.
 - Blake Middleton: primary race officer (PRO) for the MYC, master scorer
 - Gretchen Wilbrandt: MYC Executive Director, master scheduler
 - Carol McGoldrick: former MYC club manager, master scheduler
-- Pat Fleming: initial tester
-- Tom vergburt: initial project management
+- Pat Fleming: initial tester in 2009-2010
+- Tom vergburt: initial project management in 2009-2010
 - Jonathan McDonagh: initial design assistance
-
 
 ~End~

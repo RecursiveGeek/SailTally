@@ -1,7 +1,7 @@
 ﻿~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~,_/|)~~~
 SailTally Sailboat Race Scoring
-Software Development: Hans Dickel, Aeriden LLC (www.aeriden.com)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~,_/|)~~~
+https://github.com/RecursiveGeek/SailTally
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!!!~~~
 
 License:  GNU General Public License version 2 (GPLv2)
 Copyright (C) 1989, 1991 Free Software Foundation, Inc.
