@@ -1,6 +1,6 @@
 param(
 	[String]$buildArtifactStagingDirectory,
-	[SecureString]$sqlConnectionStr,
+	[String]$sqlConnectionStr,
 	[String]$googleTrackId
 )
 
