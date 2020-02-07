@@ -87,9 +87,9 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="bundleconfig.json" />
-    <None Include="Docs\SailTally.docx" />
-    <None Include="Properties\PublishProfiles\SailTally %28Winhost%29 - Not Used.pubxml" />
-    <None Include="Properties\PublishProfiles\SailTally CodePlex Publish Precompiled.pubxml" />
+    <None Include="Properties\PublishProfiles\Release-Pipelines.pubxml" />
+    <None Include="PublishStage.ps1" />
+    <Content Include="README.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -145,8 +145,6 @@
     <Content Include="TrophyResults.aspx" />
     <Content Include="UserManagement.aspx" />
     <Content Include="Users.aspx" />
-    <Content Include="Docs\SailTally.pdf" />
-    <None Include="Properties\PublishProfiles\SailTally FTP %28Winhost%29.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

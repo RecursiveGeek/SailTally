@@ -10,7 +10,7 @@ While a scorer is entering results, visitors will still see the old results.  On
 Whether you sail for pleasure or racing competitively, be sure to keep it happy.
 
 # About the Authors
-Hans Dickel is currently the IT Director of the Web Development Team at [Daikin Applied Americas](www.daikinapplied.com).  At the time this project was started, he was the founder of Aeriden LLC, a Microsoft partner focused on web development and software services on the .NET Platform and DevOps.  Having been an avid one-design sailor (C Scow, E Scow, Melges 17, A Scow, Sonar, and a mix of larger boats) and volunteer for the MYC (donating IT services, hosting, software development, former board member and flag officer), this project was developed as part of donating to the club.
+Hans Dickel is currently the IT Director of the Web Development Team at [Daikin Applied Americas](https://www.daikinapplied.com).  At the time this project was started, he was the founder of Aeriden LLC, a Microsoft partner focused on web development and software services on the .NET Platform and DevOps.  Having been an avid one-design sailor (C Scow, E Scow, Melges 17, A Scow, Sonar, and a mix of larger boats) and volunteer for the MYC (donating IT services, hosting, software development, former board member and flag officer), this project was developed as part of donating to the club.
 
 # Database Schema
 View the PDF document of the [DB Schema](/Setup/SailTally%20DB%20Schema.pdf).
