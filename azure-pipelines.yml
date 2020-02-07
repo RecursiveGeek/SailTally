@@ -22,19 +22,44 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@1
+  displayName: '[Use NuGet $(nugetVersion)]'
+  inputs:
+    versionSpec: $(nugetVersion)
 
 - task: NuGetCommand@2
+  displayName: '[Restore NuGet Packages]'
   inputs:
+    command: 'restore'
     restoreSolution: '$(solution)'
 
 - task: VSBuild@1
+  displayName: '[Build Solution $(buildConfiguration) to Stage]'
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+    #msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+    msbuildArgs: '/nologo /p:DeployOnBuild=true /p:PublishProfile=$(buildConfiguration)-Pipelines'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
+#- task: VSTest@2
+#  inputs:
+#    platform: '$(buildPlatform)'
+#    configuration: '$(buildConfiguration)'
+
+- task: PowerShell@2
+  displayName: '[Publish Stage to Artifacts]'
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    targetType: filePath
+    filePath: 'PublishStage.ps1'
+    arguments: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: '[Publish Artifacts to Releases]'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: '$(artifactName)'
+    publishLocation: 'Container'
+  condition: succeededOrFailed()
+
+# ~End~
+
