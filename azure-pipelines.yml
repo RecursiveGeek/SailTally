@@ -51,7 +51,7 @@ steps:
   inputs:
     targetType: filePath
     filePath: 'PublishStage.ps1'
-    arguments: '$(Build.ArtifactStagingDirectory) $(sqlConnectionString) $(googleTrackId)'
+    arguments: '$(Build.ArtifactStagingDirectory)' '$(sqlConnectionString)' '$(googleTrackId)'
 
 - task: PublishBuildArtifacts@1
   displayName: '[Publish Artifacts to Releases]'
