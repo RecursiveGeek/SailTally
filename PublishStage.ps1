@@ -12,25 +12,13 @@ Write-Host "                                                        "
 Write-Host "? Move Bits from Stage to Artifacts Locations.          "
 Write-Host "                                                        "
 
-function CopyFolder
-{
-	Param (
-		[String]$path,
-		[String]$mask = "*.*"
-	)
-
-	robocopy ".\$path" "$buildArtifactStagingDirectory\$path" $mask /S /NP
-}
-
 $loc = Get-Location
 $scriptFolder = $PSScriptRoot
-$sourcePath = "bin\Release\Publish"
-$sourceFolder = "$scriptFolder\$sourcePath"
+$sourceFolder = "$scriptFolder\bin\Release\Publish"
 
 Write-Host "[Information]"
 Write-Host "Startup Folder: $loc"
 Write-Host "Script Folder: $scriptFolder"
-Write-Host "Source Path: $sourcePath"
 Write-Host "Source Folder: $sourceFolder"
 Write-Host "Artifacts Staging Folder (Destination): $buildArtifactStagingDirectory"
 Write-Host "Google Tracking ID: $googleTrackId"
@@ -45,8 +33,7 @@ Write-Host
 if ($buildArtifactStagingDirectory -ne 0)
 {
 	Write-Host "[Copy To Artifacts]"
-	#robocopy ".\" "$buildArtifactStagingDirectory" PublishSites.* /NP
-	CopyFolder "$sourcePath"
+	robocopy "$sourceFolder" "$buildArtifactStagingDirectory" *.* /S /NP
 	Write-Host
 }
 else
@@ -62,8 +49,8 @@ exit 0;
 # SIG # Begin signature block
 # MIIYcAYJKoZIhvcNAQcCoIIYYTCCGF0CAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUhjpwt+PbSIMHZ8V5K2TpRiJ1
-# bGagghMHMIIEFDCCAvygAwIBAgILBAAAAAABL07hUtcwDQYJKoZIhvcNAQEFBQAw
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUqkile0gCTShFgQN0GuWcgiBc
+# cKygghMHMIIEFDCCAvygAwIBAgILBAAAAAABL07hUtcwDQYJKoZIhvcNAQEFBQAw
 # VzELMAkGA1UEBhMCQkUxGTAXBgNVBAoTEEdsb2JhbFNpZ24gbnYtc2ExEDAOBgNV
 # BAsTB1Jvb3QgQ0ExGzAZBgNVBAMTEkdsb2JhbFNpZ24gUm9vdCBDQTAeFw0xMTA0
 # MTMxMDAwMDBaFw0yODAxMjgxMjAwMDBaMFIxCzAJBgNVBAYTAkJFMRkwFwYDVQQK
@@ -170,25 +157,25 @@ exit 0;
 # YXNzIDMgU0hBMjU2IENvZGUgU2lnbmluZyBDQQIQCwcG+m5b/nuagVPeiumLGzAJ
 # BgUrDgMCGgUAoHAwEAYKKwYBBAGCNwIBDDECMAAwGQYJKoZIhvcNAQkDMQwGCisG
 # AQQBgjcCAQQwHAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcN
-# AQkEMRYEFEUn9KNYPS9/LvdDEvVId0m2J8aiMA0GCSqGSIb3DQEBAQUABIIBABxK
-# Vo+N5zbTyhO/m4MWR5Nhbclpo9mfonCiTRoo+XfvPpBHlpp0ZaBpPRh6+qgxA499
-# qXq3+qctOQ3jXK1aRDO4xJPJVCK7VywDITYD0be4s8NnnqsplilMXvQaDNRWVzTO
-# 2ISwc9ix+LQUAPF882BrX9g6Q7uIYmOaFRwnqb87DdcG4fle6n7mZ8wJRiUyYR6U
-# VW+0+qFprXpKivCV9QpPF52QobcHvU/5sDGMfnMnqxvVS47xpYbblbAy/DIZ1SU6
-# 7HI2CvHFs4Ds/lGEu35Va+gpYgjySm+uK4AsfQvmCALTF/Mmd9mzQ4kkH9/rZElI
-# oSCzNh6X04hS9R3KSRGhggKiMIICngYJKoZIhvcNAQkGMYICjzCCAosCAQEwaDBS
+# AQkEMRYEFOYL1td71WMPX08j3th3MqrcoDdOMA0GCSqGSIb3DQEBAQUABIIBANYN
+# 5VwvVs6olNYuBZnLhUIheVNmnqfEwB7WUfwEWFfUlAgrib92oXuTwgMMJblcHSR/
+# /DavryYFs5kMQPBlWRtpwp0Cwl90pbD/y5+PusftVVK1h1TixAITaxzWM4Js/mmw
+# VXEFwSVxsN2pPsdw7YgRsirFEb3q2MiujOQ9mCwVw1GFD7OiU/1aWB90b4R4ZQjC
+# 6TAmxNCwEdyduUq1hmm2Dtg7FJo3JPnxG5wXqKXJmj+cst2/3SvO1rOJ8jeYH2I1
+# CGRH9hVYd692eKUZJQD1C6kmrnBaWeQRiPOY5HeZYll3B+ObQs/URoqiu0Nl/nkb
+# IG/pDxWG8FLHeavfvLGhggKiMIICngYJKoZIhvcNAQkGMYICjzCCAosCAQEwaDBS
 # MQswCQYDVQQGEwJCRTEZMBcGA1UEChMQR2xvYmFsU2lnbiBudi1zYTEoMCYGA1UE
 # AxMfR2xvYmFsU2lnbiBUaW1lc3RhbXBpbmcgQ0EgLSBHMgISESHWmadklz7x+EJ+
 # 6RnMU0EUMAkGBSsOAwIaBQCggf0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAc
-# BgkqhkiG9w0BCQUxDxcNMjAwMjA3MjI1NzM0WjAjBgkqhkiG9w0BCQQxFgQUVoVC
-# nRAmdw98i1yRd3td867P8l0wgZ0GCyqGSIb3DQEJEAIMMYGNMIGKMIGHMIGEBBRj
+# BgkqhkiG9w0BCQUxDxcNMjAwMjA3MjM0MTA0WjAjBgkqhkiG9w0BCQQxFgQUDnbA
+# KUn4Rq3jA1Z65XYLrC7eUbAwgZ0GCyqGSIb3DQEJEAIMMYGNMIGKMIGHMIGEBBRj
 # uC+rYfWDkJaVBQsAJJxQKTPseTBsMFakVDBSMQswCQYDVQQGEwJCRTEZMBcGA1UE
 # ChMQR2xvYmFsU2lnbiBudi1zYTEoMCYGA1UEAxMfR2xvYmFsU2lnbiBUaW1lc3Rh
 # bXBpbmcgQ0EgLSBHMgISESHWmadklz7x+EJ+6RnMU0EUMA0GCSqGSIb3DQEBAQUA
-# BIIBAAjqY9L5vMmdtU2teWZwzBBLlat2aBlYzHvkzXepu0rDyftGDpH1mFlpHzmY
-# AkiAlAHR9Cl0I6N2HN/1Pxo1F05UXaq25HPFHM/zsLmMjDgmZWITF77yn/7Q5ih1
-# R6oQOxSmBDBHG+Iam1W34W+XlETkbRIZlqT9QARBVEK5l6wHzOGurCaJliPR5JT9
-# EV73YHQXIx0Nk5z3Mp27z6SEhn0iWzULkP8V89w0XEvIiUOQ1AQFYVWfZevYJ3V2
-# tZ6umu8ENjlajY0AsTgaa/ZspS0Kw7e5ThKRJVf/ghw6JKkceU6pAPJNqECnWcfb
-# HaRTmkS2hEewJM9XG16QA4r1OuQ=
+# BIIBABnKEBv3ckfBtvCfXo85A33R4okr+jiXCmQ4ZXrXfGTog+wPMhjdzfDQ8O42
+# Z1zv/FWWAkE3LW63o29bpDpfNOjxA0Sc7T8oxuN1dQVHrWeKeQfRndkDDAoal2c7
+# kzLY0ZNuyFxuJuyvFzpBe2DTvdihYw7x3MGmT2LlfKoGLInEPRP6OPWt1ktMkujw
+# wZ4n1uwvRjFc5j8GZROfDWkKxP0O5Pj9wmySdFIoAHTKBMjNVKm0zjmXiOFYXOhP
+# LOq8kptLAVtpraKo/PqKyJCdha9FZA1zAH2GdEn503iswWphlJZp3wnVaVHcg9Kd
+# 20nt7uhy0NUddEGzJgXJYBMpJV8=
 # SIG # End signature block
