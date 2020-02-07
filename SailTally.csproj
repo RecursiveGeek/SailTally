@@ -99,6 +99,7 @@
     <Content Include="Scripts\sailtally.min.js">
       <DependentUpon>sailtally.js</DependentUpon>
     </Content>
+    <Content Include="Setup\SailTally_v1.2_New.sql" />
     <Content Include="Site.Master" />
     <Content Include="Styles\bootstrap.css" />
     <Content Include="Styles\bootstrap.min.css" />
@@ -157,6 +158,7 @@
     </Content>
     <Content Include="Site.ASPMenu.Master" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Setup\SailTally DB Schema.pdf" />
     <None Include="Web.Source.config" />
   </ItemGroup>
   <ItemGroup>
@@ -433,7 +435,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Setup\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config">
