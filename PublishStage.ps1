@@ -24,11 +24,13 @@ function CopyFolder
 
 $loc = Get-Location
 $scriptFolder = $PSScriptRoot
-$sourceFolder = "$scriptFolder\bin\Release\Publish"
+$sourcePath = "bin\Release\Publish"
+$sourceFolder = "$scriptFolder\$sourcePath"
 
 Write-Host "[Information]"
 Write-Host "Startup Folder: $loc"
 Write-Host "Script Folder: $scriptFolder"
+Write-Host "Source Path: $sourcePath"
 Write-Host "Source Folder: $sourceFolder"
 Write-Host "Artifacts Staging Folder (Destination): $buildArtifactStagingDirectory"
 Write-Host "Google Tracking ID: $googleTrackId"
@@ -44,7 +46,7 @@ if ($buildArtifactStagingDirectory -ne 0)
 {
 	Write-Host "[Copy To Artifacts]"
 	robocopy ".\" "$buildArtifactStagingDirectory" Publish*.ps1 /NP
-	CopyFolder "$sourceFolder\"
+	CopyFolder "$sourcePath"
 	Write-Host
 }
 else
@@ -60,8 +62,8 @@ exit 0;
 # SIG # Begin signature block
 # MIIYcAYJKoZIhvcNAQcCoIIYYTCCGF0CAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUkLsqgFIKlfVUglJvOe3uUkw2
-# UtmgghMHMIIEFDCCAvygAwIBAgILBAAAAAABL07hUtcwDQYJKoZIhvcNAQEFBQAw
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUVwBwfECsW/nj+jdvDges1ppv
+# eq6gghMHMIIEFDCCAvygAwIBAgILBAAAAAABL07hUtcwDQYJKoZIhvcNAQEFBQAw
 # VzELMAkGA1UEBhMCQkUxGTAXBgNVBAoTEEdsb2JhbFNpZ24gbnYtc2ExEDAOBgNV
 # BAsTB1Jvb3QgQ0ExGzAZBgNVBAMTEkdsb2JhbFNpZ24gUm9vdCBDQTAeFw0xMTA0
 # MTMxMDAwMDBaFw0yODAxMjgxMjAwMDBaMFIxCzAJBgNVBAYTAkJFMRkwFwYDVQQK
@@ -168,25 +170,25 @@ exit 0;
 # YXNzIDMgU0hBMjU2IENvZGUgU2lnbmluZyBDQQIQCwcG+m5b/nuagVPeiumLGzAJ
 # BgUrDgMCGgUAoHAwEAYKKwYBBAGCNwIBDDECMAAwGQYJKoZIhvcNAQkDMQwGCisG
 # AQQBgjcCAQQwHAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcN
-# AQkEMRYEFNv9iTd5KBiY1Ym3X3imtrpcBOazMA0GCSqGSIb3DQEBAQUABIIBAHth
-# b1GkTjMNLBB3KdAjFi4bYTLiBkDziEhC3QFjq7oxQG0f6Ngzi8dKuBS0cpaid6fx
-# TZW7gVEo5WPYELrluxl8BG7511qFwDxhlFy0touRfvmiJsv+maYhzv1oKu/vTrlO
-# ezY82hCMJwDw8mWEdYOerss5QkxomzAN8dd2nFzZQHZWvAz1r1FIfWESuqDah33s
-# lHHIkeU2+lH4qL+78pk6ZB9oS9WTN859dZv5XF70CRDHvyIITnPrnnZPFIoOiTad
-# YZTnrCULvyczLBjJPY44SFQSSNymfXs1Rwx9Yv2jYY+RJ5KbZByvaIDYDrpHe2ip
-# DILmuHOubeLGGHlPWJ6hggKiMIICngYJKoZIhvcNAQkGMYICjzCCAosCAQEwaDBS
+# AQkEMRYEFOow1QO94n6zEhAwlU39SE/mfUZvMA0GCSqGSIb3DQEBAQUABIIBAFjK
+# xRjPgsaA4gUciKLdR7hu5UilDDZqkItbAHK0a3Td2dqZd4OTfwDczUFvZlr00cSa
+# 3gqA5sAVnSE5FVeozHGwsaMK8niGZK0QHiVboEdY1bgtOKusCnkB33vYJBmNcHfG
+# 0hPoT0O/lGNyHZ1D52zJPgEkkWBkxNosENxbMiV86+77VHMz9arenp+X1DllwZ4A
+# ANOfmP+3yuLf+391xThSh6+MKV9q5Ilvlxdm0XEAR5b8pPjmlD7eeqPG+Lh6Fc/6
+# URalKDZBtM2gXJ1t42YaSnZBqcSZfLNHBzXEFM8XR/kXRLGziPHLFozXYb0NVw5O
+# nvAx7TmwzbVi6PIAYi2hggKiMIICngYJKoZIhvcNAQkGMYICjzCCAosCAQEwaDBS
 # MQswCQYDVQQGEwJCRTEZMBcGA1UEChMQR2xvYmFsU2lnbiBudi1zYTEoMCYGA1UE
 # AxMfR2xvYmFsU2lnbiBUaW1lc3RhbXBpbmcgQ0EgLSBHMgISESHWmadklz7x+EJ+
 # 6RnMU0EUMAkGBSsOAwIaBQCggf0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAc
-# BgkqhkiG9w0BCQUxDxcNMjAwMjA3MjIwOTE1WjAjBgkqhkiG9w0BCQQxFgQUCQXo
-# fOar2dzE6f1Xpr+cjevDziUwgZ0GCyqGSIb3DQEJEAIMMYGNMIGKMIGHMIGEBBRj
+# BgkqhkiG9w0BCQUxDxcNMjAwMjA3MjI0NjQwWjAjBgkqhkiG9w0BCQQxFgQUzny+
+# fDUZESsDgaF8mFUX8OW3orswgZ0GCyqGSIb3DQEJEAIMMYGNMIGKMIGHMIGEBBRj
 # uC+rYfWDkJaVBQsAJJxQKTPseTBsMFakVDBSMQswCQYDVQQGEwJCRTEZMBcGA1UE
 # ChMQR2xvYmFsU2lnbiBudi1zYTEoMCYGA1UEAxMfR2xvYmFsU2lnbiBUaW1lc3Rh
 # bXBpbmcgQ0EgLSBHMgISESHWmadklz7x+EJ+6RnMU0EUMA0GCSqGSIb3DQEBAQUA
-# BIIBAGKnrQsiwhG2MkdjNN5vU4sd0QKeE8YIZ6HQaRAyaOB+zQBUuCgtQyZAFuPn
-# qjq2LFwZ7MsgwMUt9nOuNSaqot+U/WL2hJShMbUhTFmXgTJtqEXkMt2IoRpvyZFA
-# mqqYhacrLFLpoudUVRidp8sCFeja/O5lVTclKaJgq8936cq5+BCKESdjie8eyYQe
-# rJhKW4fivdYkszXbkVQxRd3qWlEfGZ7c8zyxOdLPzfyM6/qLkns5y/qE9XR3HnMZ
-# G0Zdvf5ru+5MQO0AkS/SUg8hdKDAS/dfBik0fY1EMdrgm98Z0M1lgNFGBPc8JtYr
-# qrHG9Qe0LBLj/JmvIk1fPdoKnQs=
+# BIIBABLvWKRb/S8YNKeT3M7PtFmwQRdEA/ogb5CKMOwuwcr2IdR4w9KIwGDoknbq
+# GRQi/lhF5wUdaGexYjCpBQ7M5irhBUW1N/e5WkvPD5FicU6K39p/mNYIA9cizhqG
+# XdiR6582VUHuSr4QPVNVOnttkov4v1HQUwAJnF4KRiquNZgxdyuozcVYG7Xw+nXK
+# W07P3Y1XFB0hjENH8Q+bl0Qi38c8fnukacxr0zeQhHpxhrC4PwA7h/6ec8NpMICf
+# vJjhzAhGFtisTrchXbHjsl1BVo3VBLOK4UTNq+BnRppzNR3fxOm3LMc6IXcZzI8n
+# kK+O4uWIiPSzJ6uMDEqm29Aiwf0=
 # SIG # End signature block
