@@ -86,6 +86,7 @@
     <Content Include="robots.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="azure-pipelines.yml" />
     <None Include="bundleconfig.json" />
     <None Include="Properties\PublishProfiles\Release-Pipelines.pubxml" />
     <None Include="PublishStage.ps1" />
