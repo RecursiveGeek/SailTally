@@ -1,7 +1,7 @@
 param(
-	[string]$buildArtifactStagingDirectory,
-	[string]$sqlConnectionStr,
-	[string]$googleTrackId
+	[String]$buildArtifactStagingDirectory,
+	[SecureString]$sqlConnectionStr,
+	[String]$googleTrackId
 )
 
 Write-Host "                                                        "
@@ -15,8 +15,8 @@ Write-Host "                                                        "
 function CopyFolder
 {
 	Param (
-		[string]$path,
-		[string]$mask = "*.*"
+		[String]$path,
+		[String]$mask = "*.*"
 	)
 
 	robocopy ".\$path" "$buildArtifactStagingDirectory\$path" $mask /S /NP
@@ -60,8 +60,8 @@ exit 0;
 # SIG # Begin signature block
 # MIIYcAYJKoZIhvcNAQcCoIIYYTCCGF0CAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUdrNUPOzaKWdxl1g/GdV8fnom
-# TU2gghMHMIIEFDCCAvygAwIBAgILBAAAAAABL07hUtcwDQYJKoZIhvcNAQEFBQAw
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUkLsqgFIKlfVUglJvOe3uUkw2
+# UtmgghMHMIIEFDCCAvygAwIBAgILBAAAAAABL07hUtcwDQYJKoZIhvcNAQEFBQAw
 # VzELMAkGA1UEBhMCQkUxGTAXBgNVBAoTEEdsb2JhbFNpZ24gbnYtc2ExEDAOBgNV
 # BAsTB1Jvb3QgQ0ExGzAZBgNVBAMTEkdsb2JhbFNpZ24gUm9vdCBDQTAeFw0xMTA0
 # MTMxMDAwMDBaFw0yODAxMjgxMjAwMDBaMFIxCzAJBgNVBAYTAkJFMRkwFwYDVQQK
@@ -168,25 +168,25 @@ exit 0;
 # YXNzIDMgU0hBMjU2IENvZGUgU2lnbmluZyBDQQIQCwcG+m5b/nuagVPeiumLGzAJ
 # BgUrDgMCGgUAoHAwEAYKKwYBBAGCNwIBDDECMAAwGQYJKoZIhvcNAQkDMQwGCisG
 # AQQBgjcCAQQwHAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcN
-# AQkEMRYEFKFwEDuuOY1xHttrU53Ie1aQ9rzMMA0GCSqGSIb3DQEBAQUABIIBAKuf
-# FvvMJExstbZAAqc2569KoebpThfMpnwZg2nwTP+6lxxIOPXUNzP3NrIlJGubK2aA
-# cvzVFtCjahT9dGe7bWFfiNcuJYwE6RXZsgHNEg2Pc9UJhtQgCNHaaqOre0gzyt5b
-# sg9BDHtxRr4eYAQ9gRP2h2rkmMD6KYqnVRQNREifA29olCYAz4lcKwA+yS4Ycz/Y
-# KUP2/zPi8Cxq46z5Y94D+tCvTmMM0QPkLC/JKObFsJbt5bKA8jwcK+/I84JB5N0O
-# p4fL5JKsA19PGUhN+jO0GcuWmyOm4S9L+D34JiXuml9lTEpFBlK13oxPYQV/MfRj
-# sjgor2y27Ww5pZmd5yWhggKiMIICngYJKoZIhvcNAQkGMYICjzCCAosCAQEwaDBS
+# AQkEMRYEFNv9iTd5KBiY1Ym3X3imtrpcBOazMA0GCSqGSIb3DQEBAQUABIIBAHth
+# b1GkTjMNLBB3KdAjFi4bYTLiBkDziEhC3QFjq7oxQG0f6Ngzi8dKuBS0cpaid6fx
+# TZW7gVEo5WPYELrluxl8BG7511qFwDxhlFy0touRfvmiJsv+maYhzv1oKu/vTrlO
+# ezY82hCMJwDw8mWEdYOerss5QkxomzAN8dd2nFzZQHZWvAz1r1FIfWESuqDah33s
+# lHHIkeU2+lH4qL+78pk6ZB9oS9WTN859dZv5XF70CRDHvyIITnPrnnZPFIoOiTad
+# YZTnrCULvyczLBjJPY44SFQSSNymfXs1Rwx9Yv2jYY+RJ5KbZByvaIDYDrpHe2ip
+# DILmuHOubeLGGHlPWJ6hggKiMIICngYJKoZIhvcNAQkGMYICjzCCAosCAQEwaDBS
 # MQswCQYDVQQGEwJCRTEZMBcGA1UEChMQR2xvYmFsU2lnbiBudi1zYTEoMCYGA1UE
 # AxMfR2xvYmFsU2lnbiBUaW1lc3RhbXBpbmcgQ0EgLSBHMgISESHWmadklz7x+EJ+
 # 6RnMU0EUMAkGBSsOAwIaBQCggf0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAc
-# BgkqhkiG9w0BCQUxDxcNMjAwMjA3MjE1OTUyWjAjBgkqhkiG9w0BCQQxFgQUpp6N
-# lGffcAYRsbX/xn6cPVO8Z6swgZ0GCyqGSIb3DQEJEAIMMYGNMIGKMIGHMIGEBBRj
+# BgkqhkiG9w0BCQUxDxcNMjAwMjA3MjIwOTE1WjAjBgkqhkiG9w0BCQQxFgQUCQXo
+# fOar2dzE6f1Xpr+cjevDziUwgZ0GCyqGSIb3DQEJEAIMMYGNMIGKMIGHMIGEBBRj
 # uC+rYfWDkJaVBQsAJJxQKTPseTBsMFakVDBSMQswCQYDVQQGEwJCRTEZMBcGA1UE
 # ChMQR2xvYmFsU2lnbiBudi1zYTEoMCYGA1UEAxMfR2xvYmFsU2lnbiBUaW1lc3Rh
 # bXBpbmcgQ0EgLSBHMgISESHWmadklz7x+EJ+6RnMU0EUMA0GCSqGSIb3DQEBAQUA
-# BIIBACGQh6UDQvctMnssdcgTFg8nkGh/z9HvhUGOUKLKpIgK0phpnX74QehoGHJk
-# xPf9K7xkLiIC5AqA1Khvx1JTm2OpUVvoYnOIsWyENivDSRGBZOMldagA/bbdZW5S
-# IeYJfA2HwRF84QG8LuVguLIG01PnEmpbrno+/UY9MF0GBLWIuDiIoTc6ezKfZlnb
-# d02++ajNzUBlu0hMOteXts9hHBUOn7CsSghhQgmN8NQfhBaePDAmYMkD1yYovk+F
-# D119H1is+p+z5Jca3rqHruhtVFDwK70huT08pMXP5q9xlHsR0OsoRMKmTYeWSpt7
-# HrCoQUNxwsQrZnoHyHghlwN29XA=
+# BIIBAGKnrQsiwhG2MkdjNN5vU4sd0QKeE8YIZ6HQaRAyaOB+zQBUuCgtQyZAFuPn
+# qjq2LFwZ7MsgwMUt9nOuNSaqot+U/WL2hJShMbUhTFmXgTJtqEXkMt2IoRpvyZFA
+# mqqYhacrLFLpoudUVRidp8sCFeja/O5lVTclKaJgq8936cq5+BCKESdjie8eyYQe
+# rJhKW4fivdYkszXbkVQxRd3qWlEfGZ7c8zyxOdLPzfyM6/qLkns5y/qE9XR3HnMZ
+# G0Zdvf5ru+5MQO0AkS/SUg8hdKDAS/dfBik0fY1EMdrgm98Z0M1lgNFGBPc8JtYr
+# qrHG9Qe0LBLj/JmvIk1fPdoKnQs=
 # SIG # End signature block
