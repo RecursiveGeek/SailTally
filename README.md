@@ -18,7 +18,7 @@ View the PDF document of the [DB Schema](/Setup/SailTally%20DB%20Schema.pdf).
 # Installation
 ## Deployment Requirements
 
-- .NET Framework 4.6.1
+- .NET Framework 4.6.1+
 - One of the following databases:
     - Microsoft SQL Server 2012+ with sql authentication enabled or Integration Authentication using an IIS Application Pool account
     - Azure DB v12+ with sql authentication
@@ -77,15 +77,18 @@ There is an eye to replace this solution with a ASP.NET Core 3.1 MVC (or Razor) 
 A redesigned UX is a must with support for mobile or tablet touch, while still support the mouse and keyboard.  The ultimate desirable library is TBD, although there is an eye towards Blazor for client-side interactions.
 
 # Contributors
-- [Hans Dickel](mailto:hans@raceh2o.com): primary development contributor.
+- Hans Dickel: primary development contributor.
 - Blake Middleton: primary race officer (PRO) for the MYC, master scorer
 - Gretchen Wilbrandt: MYC Executive Director, master scheduler
 - Carol McGoldrick: former MYC club manager, master scheduler
 - Pat Fleming: initial tester in 2009-2010
 - Tom vergburt: initial project management in 2009-2010
-- Jonathan McDonagh: initial design assistance
+- Jonathan McDonagh: initial design assistance in 2009
 
 # Version History
+**Version 1.2.1**
+Update Google Analytics support, code cleanup.
+
 **Version 1.2.0**
 Moved to [GitHub](https://www.github.com) and performed updates to support Azure Pipelines CI/CD (Continuous Integration/Continuous Deployment).
 
