@@ -2,108 +2,119 @@
 <%@ Import Namespace="SailTally" %>
 <!DOCTYPE html>
 <html lang="en">
-<%-- ReSharper disable ArrangeThisQualifier --%>
-<head runat="server">
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>SailTally</title>
-    <link href="~/Styles/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="~/Styles/jquery-ui-1.11.1.custom.min.css" rel="stylesheet" type="text/css"/>
-    <link href="~/Styles/sailtally.min.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/jquery-1.10.2.min.js") %>"></script>
-    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/jquery-ui-1.11.1.custom.min.js") %>"></script>
-    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/bootstrap.min.js") %>"></script>
-    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/sailtally.min.js") %>"></script>
-    <link rel="icon" href="~/Images/SailTally.ico" type="image/x-icon"/>
-    <link rel="shortcut icon" href="~/Images/SailTally.ico" type="image/x-icon"/>
-    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
-    <meta name="description" content="SailTally Sailboat Racing Scoring Application"/>
-    <asp:Literal ID="LiteralHeader" runat="server"></asp:Literal>
-</head>
-<body>
-   <form runat="server">  
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/Default.aspx"><span class="Sail">Sail</span><span class="Tally">Tally</span></a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" role="button" href="~/About.aspx">About</a></li>
-                        <li><a runat="server" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#">Race <span class="caret"></span></a>
-                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                                <li><a runat="server" href="~/DisplayResults.aspx">Display Results</a></li>
-                                <li class="divider"></li>
-                                <li><a runat="server" href="~/Schedule.aspx">Schedule Races</a></li>
-                                <li><a runat="server" href="~/DisplaySchedule.aspx">Display Schedule</a></li>
-                                <li class="divider"></li>
-                                <li><a runat="server" href="~/Score.aspx">Score Races</a></li>
-                                <li><a runat="server" href="~/Results.aspx">Publish Results</a></li>
-                                <li class="divider"></li>
-                                <li><a runat="server" href="~/CompleteResults.aspx">Complete Results</a></li>
-                                <li><a runat="server" href="~/BoatResults.aspx">Boat Results</a></li>
-                                <li><a runat="server" href="~/TrophyResults.aspx">Trophy Results</a></li>
-                                <li><a runat="server" href="~/ReportAttendance.aspx">Attendance Report</a></li>
-                            </ul>
-                        </li>
-                        <li><a runat="server" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#">Admin <span class="caret"></span></a>
-                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                                <li><a runat="server" href="~/Log.aspx">Log</a></li>
-                                <li><a runat="server" href="~/Users.aspx">Users</a></li>
-                                <li><a runat="server" href="~/OrphanRaces.aspx">Orphan Races</a></li>
-                                <li class="divider"></li>
-                                <li><a runat="server" href="~/SeasonCopy.aspx">Season Copy</a></li>
-                                <li class="divider"></li>
-                                <li><a runat="server" href="https://github.com/RecursiveGeek/SailTally/blob/master/README.md" target="_blank">Documentation</a></li>
-                            </ul>
-                        </li>
-                        <li><a runat="server" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#">Setup <span class="caret"></span></a>
-                             <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                                 <li><a runat="server" href="~/Boats.aspx">Boats</a></li>
-                                 <li><a runat="server" href="~/Series.aspx">Series</a></li>
-                                 <li><a runat="server" href="~/Fleets.aspx">Fleets</a></li>
-                                 <li><a runat="server" href="~/FleetSeries.aspx">Fleet Series</a></li>
-                                 <li><a runat="server" href="~/Seasons.aspx">Seasons</a></li>
-                                 <li><a runat="server" href="~/ScoreMethod.aspx">Scoring</a></li>
-                                 <li><a runat="server" href="~/ThrowoutMethod.aspx">Throwouts</a></li>
-                                 <li><a runat="server" href="~/Penalties.aspx">Penalties</a></li>
-                                 <li><a runat="server" href="~/Times.aspx">Times</a></li>
-                                 <li><a runat="server" href="~/Trophies.aspx">Trophies</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#"><asp:LoginName ID="HeadLoginName" runat="server" /> <span class="caret"></span></a>
-                                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                                       <li><a role="button" href="Account/ChangePassword.aspx">Change Password</a></li>
-                                       <li><asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
+    <head runat="server">
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="SailTally Sailboat Racing Scoring Application"/>
+
+        <title>SailTally</title>
+
+        <link href="~/Styles/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="~/Styles/jquery-ui-1.11.1.custom.min.css" rel="stylesheet" type="text/css"/>
+        <link href="~/Styles/sailtally.min.css" rel="stylesheet" type="text/css"/>
+
+        <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/jquery-1.10.2.min.js") %>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/jquery-ui-1.11.1.custom.min.js") %>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/bootstrap.min.js") %>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/sailtally.min.js") %>"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<%= GetGoogleId() %>"></script>
+        <script type="text/javascript">
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '<%= GetGoogleId() %>');
+        </script>
+
+        <link rel="icon" href="~/Images/SailTally.ico" type="image/x-icon"/>
+        <link rel="shortcut icon" href="~/Images/SailTally.ico" type="image/x-icon"/>
+
+        <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+        <asp:Literal ID="LiteralHeader" runat="server"></asp:Literal>
+    </head>
+    <body>
+       <form runat="server">  
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" runat="server" href="~/Default.aspx"><span class="Sail">Sail</span><span class="Tally">Tally</span></a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a runat="server" role="button" href="~/About.aspx">About</a></li>
+                            <li><a runat="server" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#">Race <span class="caret"></span></a>
+                                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                    <li><a runat="server" href="~/DisplayResults.aspx">Display Results</a></li>
+                                    <li class="divider"></li>
+                                    <li><a runat="server" href="~/Schedule.aspx">Schedule Races</a></li>
+                                    <li><a runat="server" href="~/DisplaySchedule.aspx">Display Schedule</a></li>
+                                    <li class="divider"></li>
+                                    <li><a runat="server" href="~/Score.aspx">Score Races</a></li>
+                                    <li><a runat="server" href="~/Results.aspx">Publish Results</a></li>
+                                    <li class="divider"></li>
+                                    <li><a runat="server" href="~/CompleteResults.aspx">Complete Results</a></li>
+                                    <li><a runat="server" href="~/BoatResults.aspx">Boat Results</a></li>
+                                    <li><a runat="server" href="~/TrophyResults.aspx">Trophy Results</a></li>
+                                    <li><a runat="server" href="~/ReportAttendance.aspx">Attendance Report</a></li>
+                                </ul>
+                            </li>
+                            <li><a runat="server" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#">Admin <span class="caret"></span></a>
+                                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                    <li><a runat="server" href="~/Log.aspx">Log</a></li>
+                                    <li><a runat="server" href="~/Users.aspx">Users</a></li>
+                                    <li><a runat="server" href="~/OrphanRaces.aspx">Orphan Races</a></li>
+                                    <li class="divider"></li>
+                                    <li><a runat="server" href="~/SeasonCopy.aspx">Season Copy</a></li>
+                                    <li class="divider"></li>
+                                    <li><a runat="server" href="https://github.com/RecursiveGeek/SailTally/blob/master/README.md" target="_blank">Documentation</a></li>
+                                </ul>
+                            </li>
+                            <li><a runat="server" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#">Setup <span class="caret"></span></a>
+                                 <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                     <li><a runat="server" href="~/Boats.aspx">Boats</a></li>
+                                     <li><a runat="server" href="~/Series.aspx">Series</a></li>
+                                     <li><a runat="server" href="~/Fleets.aspx">Fleets</a></li>
+                                     <li><a runat="server" href="~/FleetSeries.aspx">Fleet Series</a></li>
+                                     <li><a runat="server" href="~/Seasons.aspx">Seasons</a></li>
+                                     <li><a runat="server" href="~/ScoreMethod.aspx">Scoring</a></li>
+                                     <li><a runat="server" href="~/ThrowoutMethod.aspx">Throwouts</a></li>
+                                     <li><a runat="server" href="~/Penalties.aspx">Penalties</a></li>
+                                     <li><a runat="server" href="~/Times.aspx">Times</a></li>
+                                     <li><a runat="server" href="~/Trophies.aspx">Trophies</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                            <AnonymousTemplate>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a></li>
+                                </ul>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a runat="server" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="#"><asp:LoginName ID="HeadLoginName" runat="server" /> <span class="caret"></span></a>
+                                        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                           <li><a role="button" href="Account/ChangePassword.aspx">Change Password</a></li>
+                                           <li><asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
-        </div>
+            
+            <div class="container body-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+            </div>
 
-        <footer class="footer"><div class="container">Copyright &copy; 2009-<%: CentralLibrary.GetCurrentDateTime().Year %>, SailTally, All Rights Reserved.</div></footer>
-    </form>
-    <asp:Literal ID="LiteralBody" runat="server"></asp:Literal>
-</body>
+            <footer class="footer"><div class="container">Copyright &copy; 2009-<%: CentralLibrary.GetCurrentDateTime().Year %>, SailTally, All Rights Reserved.</div></footer>
+        </form>
+        <asp:Literal ID="LiteralBody" runat="server"></asp:Literal>
+    </body>
 </html>

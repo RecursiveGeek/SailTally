@@ -155,7 +155,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Site.ASPMenu.Master" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Setup\SailTally DB Schema.pdf" />
     <None Include="Web.Source.config" />
@@ -196,7 +195,7 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Appointment.cs" />
+    <Compile Include="Models\Appointment.cs" />
     <Compile Include="BoatResults.aspx.cs">
       <DependentUpon>BoatResults.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -212,9 +211,9 @@
       <DependentUpon>Boats.aspx</DependentUpon>
     </Compile>
     <Compile Include="CentralLibrary.cs" />
-    <Compile Include="Classes\Fleet.cs" />
-    <Compile Include="Classes\Race.cs" />
-    <Compile Include="Classes\Races.cs" />
+    <Compile Include="Models\Fleet.cs" />
+    <Compile Include="Models\Race.cs" />
+    <Compile Include="Models\Races.cs" />
     <Compile Include="CompleteResults.aspx.cs">
       <DependentUpon>CompleteResults.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -222,7 +221,7 @@
     <Compile Include="CompleteResults.aspx.designer.cs">
       <DependentUpon>CompleteResults.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Constant.cs" />
+    <Compile Include="Models\Constant.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -279,8 +278,8 @@
     <Compile Include="MasterPageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Classes\AssignRace.cs" />
-    <Compile Include="Classes\AssignTrophy.cs" />
+    <Compile Include="Models\AssignRace.cs" />
+    <Compile Include="Models\AssignTrophy.cs" />
     <Compile Include="OrphanRaces.aspx.cs">
       <DependentUpon>OrphanRaces.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -374,13 +373,6 @@
     </Compile>
     <Compile Include="Series.aspx.designer.cs">
       <DependentUpon>Series.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Site.ASPMenu.Master.cs">
-      <DependentUpon>Site.ASPMenu.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.ASPMenu.Master.designer.cs">
-      <DependentUpon>Site.ASPMenu.Master</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
